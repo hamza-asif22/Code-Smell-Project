@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Smell Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div id="loading-screen">
+        <div>Please Wait...</div>
+    </div>
+
+    <h1>Code <div class="head">Smell</div> Detection</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <h3>Choose py/zip file</h3>
+        <input type="file" name="file" accept=".py,.zip" /><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <script>
+        
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.display = 'none';
+            }, 2000); 
+        };
+    </script>
+</body>
+</html>
